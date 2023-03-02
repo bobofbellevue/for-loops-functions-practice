@@ -1,13 +1,37 @@
 
 // EXERCISE 20
-// Return and array of 2 arrays
+// Return an array of 2 arrays
 // (1 - an array of names that contain "a" in name, 2 - an array of names that don't have 'a' in name)
 // separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]) -> [["alice", "andrew", "mark"], ["jon", "jimmy"]]
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
-export function separateNamesWithAFromRest(array) {
-  // Your code goes here...
-
+export function separateNamesWithAFromRest(arrayIn) {
+  let arrayA = [];
+  let arrayNoA = [];
+  let arrayResult = [arrayA, arrayNoA];
+  for (let i=0; i < arrayIn.length; i++)
+  {
+    let name = arrayIn[i];
+    name = name.toUpperCase();
+    let gotA = false;
+    for (let j=0; j < name.length; j++)
+    {
+      if (name[j] === 'A')
+      {
+	gotA = true;
+	break;
+      }
+    }
+    if (gotA == true)
+    {
+      arrayA.push(arrayIn[i]);
+    }
+    else
+    {
+      arrayNoA.push(arrayIn[i]);
+    }
+  }
+  return arrayResult;
 }
 
 

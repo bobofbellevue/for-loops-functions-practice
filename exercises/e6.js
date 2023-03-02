@@ -3,10 +3,22 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithNoMoney(bankAccounts) => ['Kevin', 'Jon']
 
-export function getClientWithNoMoney(array) {
-  // Your code goes here...
-
+export function getClientWithNoMoney(arrayAccts) {
+  let acct;
+  let array = [];
+  for (let i=0; i < arrayAccts.length; i++)
+  {
+    acct = arrayAccts[i];
+    if (acct.balance > 0)
+    {
+      continue;
+    }
+    array.push(acct.name);
+  }
+  return array;
 }
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

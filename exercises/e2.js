@@ -3,9 +3,21 @@
 // getNumbersWithSquareRoots(17) => [0, 1, 4, 9, 16]
 
 export function getNumbersWithSquareRoots(max) {
-  // Your code goes here...
-
+  let arrSquareRoots = [];
+  for (let i = 0; i < max; i++)
+  {
+    for (let j = 0; j <= i; j++)
+    {
+      if (j * j == i)
+      {
+	arrSquareRoots.push(i);
+	break;
+      }
+    }
+  }
+  return arrSquareRoots;
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"

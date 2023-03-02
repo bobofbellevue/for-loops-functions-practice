@@ -4,9 +4,13 @@
 // reverseArray([1, 2, 3 ,4]) => [4, 3, 2, 1]
 // NOTE: You can NOT use the array.reverse() method in your code
 
-export function reverseArray(array) {
-  // Your code goes here...
-
+export function reverseArray(arrayIn) {
+  let arrayOut = [];
+  for (let i=arrayIn.length - 1; i >= 0; i--)
+  {
+    arrayOut.push(arrayIn[i]);
+  }
+  return arrayOut;
 }
 
 

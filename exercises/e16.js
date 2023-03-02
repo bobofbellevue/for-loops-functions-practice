@@ -5,9 +5,24 @@
 // flatArrays([['d', 'r'], 'z', 'b', ['f', 'y']]) => ['d', 'r', 'z', 'b', 'f', 'y']
 // NOTE: You can NOT use the array.flat() method in your code
 
-export function flatArrays(array) {
-  // Your code goes here...
-
+export function flatArrays(arrayIn) {
+  let arrayOut = [];
+  for (let i=0; i < arrayIn.length; i++)
+  {
+    let element = arrayIn[i];
+    if (typeof element == 'object')
+    {
+      for (let j=0; j < element.length; j++)
+      {
+	arrayOut.push(element[j]);
+      }
+    }
+    else
+    {
+      arrayOut.push(element);
+    }
+  }
+  return arrayOut;
 }
 
 
